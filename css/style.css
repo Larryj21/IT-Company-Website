@@ -67,6 +67,24 @@ body{
     box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
 }
 
+/*styling for the read more feature */
+.row .additional_content{ /*The closed state of the element*/
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.4s ease;
+}
+
+.row .additional_content p{
+    min-height: 0;
+    margin: 0;
+}
+
+.row .additional_content.open{
+    grid-template-rows: 1fr; /*Expands to fit the content*/
+}
+/*------------------------------------------------------*/
+
 .communicate .btn{
     outline: none;
     border: none;
