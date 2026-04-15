@@ -17,6 +17,7 @@
     <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
     <script src="./js/main.js"></script>
 </head>
 <body>
@@ -24,7 +25,7 @@
         <a href="#" class="logo"><img src="./images/image.png" alt=""></a>
         <div class="fas fa-bars"></div>
         <nav class="navbar">
-            <ul>
+            <ul id="navMenu">
                 <li><a href="#home">home</a></li>
                 <li><a href="#about">about</a></li>
                 <li><a href="#service">services</a></li>
@@ -34,7 +35,24 @@
                 <li><a href="#contact">contact</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
+
+        <div class="d-flex align-items-center gap-5">
+            <button id="themeToggle" onclick="toggleTheme()"
+            style="width:36px; height:36px;border-color:2px solid #091f26; border-radius:50%; border:1px solid rgba(255,255,255,0.25);
+                background:rgba(255,255,255,0.1); color:#f2f2f2; cursor:pointer;
+                display:flex; align-items:center; justify-content:center; font-size:14px; transition:all 0.25s;">
+            <i class="fa fa-sun" id="themeIcon"></i>
+            </button>
+
+            <button class="navbar-toggler border-0" type="button"
+                    id="mobileMenuBtn"
+                    style="padding:4px 6px;border:2px solid #091f26;color: #091f26; ">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
         </nav>
+
+        
     </header>
 
   <section id="home" class="home">
