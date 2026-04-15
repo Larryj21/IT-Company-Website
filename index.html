@@ -462,14 +462,30 @@
                       </div>
 
                   </div>
+     <div class="col-lg-3 col-md-6 footer-newsletter">
+  <h4>Subscription</h4>
+  <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
 
-                  <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div>
+  <!-- Subscription Form -->
+  <div id="subscribe-form-wrapper">
+    <input type="text" id="sub-name" placeholder="Your Name" class="sub-input" />
+    <span class="sub-error" id="name-error">Please enter your name.</span>
+
+    <input type="email" id="sub-email" placeholder="Your Email" class="sub-input" />
+    <span class="sub-error" id="email-error">Please enter a valid email address.</span>
+
+    <button class="sub-btn" onclick="handleSubscribe()">Subscribe Now</button>
+  </div>
+
+  <!-- Success Message -->
+  <div id="subscribe-success">
+    <div class="sub-success-icon">&#10003;</div>
+    <h5>Thank you for subscribing!</h5>
+    <p>You'll be the first to get our latest updates.</p>
+  </div>
+</div>
+</div>
+</div>
 
               </div>
           </div>

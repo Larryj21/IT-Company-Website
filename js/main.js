@@ -75,3 +75,40 @@ $('.accordion-header').click(function(){
 });
 
 });
+// Subscription Form Handler
+function handleSubscribe() {
+  var name       = document.getElementById('sub-name').value.trim();
+  var email      = document.getElementById('sub-email').value.trim();
+  var nameInput  = document.getElementById('sub-name');
+  var emailInput = document.getElementById('sub-email');
+  var nameError  = document.getElementById('name-error');
+  var emailError = document.getElementById('email-error');
+
+  // Clear previous errors first
+  nameInput.classList.remove('input-error');
+  emailInput.classList.remove('input-error');
+  nameError.classList.remove('show');
+  emailError.classList.remove('show');
+
+  var valid = true;
+
+  // Check name
+  if (name === '') {
+    nameInput.classList.add('input-error');
+    nameError.classList.add('show');
+    valid = false;
+  }
+
+  // Check email
+  if (email === '' || !email.includes('@') || !email.includes('.')) {
+    emailInput.classList.add('input-error');
+    emailError.classList.add('show');
+    valid = false;
+  }
+
+  // If both are good, show success
+  if (valid) {
+    document.getElementById('subscribe-form-wrapper').style.display = 'none';
+    document.getElementById('subscribe-success').style.display = 'block';
+  }
+}
