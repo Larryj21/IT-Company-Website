@@ -19,6 +19,22 @@ $(document).ready(function(){
         }
     });
 
+    // functionality for the "Read More" button in the About Us section
+    const btnToggle = document.getElementById('btn_toggle');
+    const additionalContent = document.getElementById('additional_content');
+
+    btnToggle.addEventListener('click', () => {
+        additionalContent.classList.toggle('open');
+        if (additionalContent.classList.contains('open')) {
+            btnToggle.innerText = 'Read Less';
+            btnToggle.setAttribute('aria-expanded', 'true');
+        } else {
+            btnToggle.innerText = 'Read More';
+            btnToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+    //-------------------------------------------------------------------
+
     const counters = document.querySelectorAll('.counter');
     const speed = 120;
     counters.forEach(counter => {
@@ -75,6 +91,7 @@ $('.accordion-header').click(function(){
 });
 
 });
+<<<<<<< HEAD
 
         // Mobile menu toggle functionality - FIXED FOR YOUR CSS STRUCTURE
 document.addEventListener('DOMContentLoaded', function() {
@@ -319,3 +336,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+=======
+//this code is for smooth scrolling to sections when clicking navbar links, but only if it's the same page (index.html) to avoid interfering with normal navigation to careers.html#section
+$(document).ready(function () {
+  $(".navbar a").on("click", function (e) {
+    const target = this.hash;
+    const currentPath = window.location.pathname;
+    const linkPath = this.pathname;
+
+    // Only prevent default if it's the SAME page
+    if (target && currentPath === linkPath) {
+      e.preventDefault();
+
+      $("html, body").animate(
+        {
+          scrollTop: $(target).offset().top - 70
+        },
+        800
+      );
+    }
+    // else → let it navigate normally (to index.html#section)
+  });
+});
+>>>>>>> e2d26bfe76396a9ddf05e4d65b1d4b68a2d22137
