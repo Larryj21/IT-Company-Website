@@ -132,6 +132,10 @@ body{
     top: 0;
     left: 0;
 }
+.logo{
+    width: 50px;
+    height: 50px;
+}
 
 .header .navbar ul{
     list-style-type: none;
@@ -279,13 +283,13 @@ body{
     margin-top: -2rem;
     border:5px solid rgba(0,0,0,0.07);
     -webkit-transition:all 0.5s ease 0s;
-    transition:all 0.5s ease 0s;
+    transition: transform all 0.5s ease 0s;
   }
   .item:hover{
     background:#c8d8e4;
-    box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     -webkit-transition:all 0.5s ease 0s;
-    transition:all 0.5s ease 0s;
+    transform:translateY(-10px);
   }
   .item:hover .item,
   .item:hover span.icon{
@@ -302,6 +306,7 @@ body{
     color:#2b6777;
     -webkit-transition:all 0.5s ease 0s;
     transition:all 0.5s ease 0s;
+    cursor: pointer; /*just so that the cursor turns into a ponter*/
   }
   .item .icon{
     font-size:40px;
@@ -1372,4 +1377,95 @@ body{
         .faq .row .accordion-container{
             width: 100%;
         }
+}
+/* ── Subscription Form ── */
+.sub-input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 191, 255, 0.4);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.4rem;
+  outline: none;
+  transition: border 0.3s;
+  box-sizing: border-box;
+}
+
+.sub-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sub-input:focus {
+  border-color: #00bfff;
+}
+
+.sub-input.input-error {
+  border-color: #ff4d4d;
+}
+
+.sub-error {
+  display: none;
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  margin-top: 2px;
+}
+
+.sub-error.show {
+  display: block;
+}
+
+.sub-btn {
+  width: 100%;
+  padding: 10px 0;
+  background: #00bfff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  margin-top: 6px;
+}
+
+.sub-btn:hover {
+  background: #0099cc;
+}
+
+.sub-btn:active {
+  transform: scale(0.98);
+}
+
+#subscribe-success {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.sub-success-icon {
+  width: 54px;
+  height: 54px;
+  background: #00bfff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: #fff;
+  margin: 0 auto 14px;
+}
+
+#subscribe-success h5 {
+  color: #00bfff;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+#subscribe-success p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.3rem;
 }
