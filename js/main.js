@@ -98,7 +98,7 @@ $(document).ready(function () {
     const currentPath = window.location.pathname;
     const linkPath = this.pathname;
 
-    // Only prevent default if it's the SAME page
+    // Only prevent default if it's the same page
     if (target && currentPath === linkPath) {
       e.preventDefault();
 
