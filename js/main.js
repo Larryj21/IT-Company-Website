@@ -19,6 +19,22 @@ $(document).ready(function(){
         }
     });
 
+    // functionality for the "Read More" button in the About Us section
+    const btnToggle = document.getElementById('btn_toggle');
+    const additionalContent = document.getElementById('additional_content');
+
+    btnToggle.addEventListener('click', () => {
+        additionalContent.classList.toggle('open');
+        if (additionalContent.classList.contains('open')) {
+            btnToggle.innerText = 'Read Less';
+            btnToggle.setAttribute('aria-expanded', 'true');
+        } else {
+            btnToggle.innerText = 'Read More';
+            btnToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+    //-------------------------------------------------------------------
+
     const counters = document.querySelectorAll('.counter');
     const speed = 120;
     counters.forEach(counter => {

@@ -67,6 +67,24 @@ body{
     box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
 }
 
+/*styling for the read more feature */
+.row .additional_content{ /*The closed state of the element*/
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.4s ease;
+}
+
+.row .additional_content p{
+    min-height: 0;
+    margin: 0;
+}
+
+.row .additional_content.open{
+    grid-template-rows: 1fr; /*Expands to fit the content*/
+}
+/*------------------------------------------------------*/
+
 .communicate .btn{
     outline: none;
     border: none;
@@ -113,6 +131,10 @@ body{
     height: 3rem;
     top: 0;
     left: 0;
+}
+.logo{
+    width: 50px;
+    height: 50px;
 }
 
 .header .navbar ul{
@@ -261,13 +283,13 @@ body{
     margin-top: -2rem;
     border:5px solid rgba(0,0,0,0.07);
     -webkit-transition:all 0.5s ease 0s;
-    transition:all 0.5s ease 0s;
+    transition: transform all 0.5s ease 0s;
   }
   .item:hover{
     background:#c8d8e4;
-    box-shadow: 0 8px 20px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     -webkit-transition:all 0.5s ease 0s;
-    transition:all 0.5s ease 0s;
+    transform:translateY(-10px);
   }
   .item:hover .item,
   .item:hover span.icon{
@@ -284,6 +306,7 @@ body{
     color:#2b6777;
     -webkit-transition:all 0.5s ease 0s;
     transition:all 0.5s ease 0s;
+    cursor: pointer; /*just so that the cursor turns into a ponter*/
   }
   .item .icon{
     font-size:40px;
