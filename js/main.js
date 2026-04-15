@@ -19,6 +19,22 @@ $(document).ready(function(){
         }
     });
 
+    // functionality for the "Read More" button in the About Us section
+    const btnToggle = document.getElementById('btn_toggle');
+    const additionalContent = document.getElementById('additional_content');
+
+    btnToggle.addEventListener('click', () => {
+        additionalContent.classList.toggle('open');
+        if (additionalContent.classList.contains('open')) {
+            btnToggle.innerText = 'Read Less';
+            btnToggle.setAttribute('aria-expanded', 'true');
+        } else {
+            btnToggle.innerText = 'Read More';
+            btnToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+    //-------------------------------------------------------------------
+
     const counters = document.querySelectorAll('.counter');
     const speed = 120;
     counters.forEach(counter => {
@@ -75,40 +91,24 @@ $('.accordion-header').click(function(){
 });
 
 });
-// Subscription Form Handler
-function handleSubscribe() {
-  var name       = document.getElementById('sub-name').value.trim();
-  var email      = document.getElementById('sub-email').value.trim();
-  var nameInput  = document.getElementById('sub-name');
-  var emailInput = document.getElementById('sub-email');
-  var nameError  = document.getElementById('name-error');
-  var emailError = document.getElementById('email-error');
+//this code is for smooth scrolling to sections when clicking navbar links, but only if it's the same page (index.html) to avoid interfering with normal navigation to careers.html#section
+$(document).ready(function () {
+  $(".navbar a").on("click", function (e) {
+    const target = this.hash;
+    const currentPath = window.location.pathname;
+    const linkPath = this.pathname;
 
-  // Clear previous errors first
-  nameInput.classList.remove('input-error');
-  emailInput.classList.remove('input-error');
-  nameError.classList.remove('show');
-  emailError.classList.remove('show');
+    // Only prevent default if it's the SAME page
+    if (target && currentPath === linkPath) {
+      e.preventDefault();
 
-  var valid = true;
-
-  // Check name
-  if (name === '') {
-    nameInput.classList.add('input-error');
-    nameError.classList.add('show');
-    valid = false;
-  }
-
-  // Check email
-  if (email === '' || !email.includes('@') || !email.includes('.')) {
-    emailInput.classList.add('input-error');
-    emailError.classList.add('show');
-    valid = false;
-  }
-
-  // If both are good, show success
-  if (valid) {
-    document.getElementById('subscribe-form-wrapper').style.display = 'none';
-    document.getElementById('subscribe-success').style.display = 'block';
-  }
-}
+      $("html, body").animate(
+        {
+          scrollTop: $(target).offset().top - 70
+        },
+        800
+      );
+    }
+    // else → let it navigate normally (to index.html#section)
+  });
+});
