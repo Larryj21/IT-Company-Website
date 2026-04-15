@@ -302,6 +302,7 @@ body{
     color:#2b6777;
     -webkit-transition:all 0.5s ease 0s;
     transition:all 0.5s ease 0s;
+    cursor: pointer; /*just so that the cursor turns into a ponter*/
   }
   .item .icon{
     font-size:40px;
