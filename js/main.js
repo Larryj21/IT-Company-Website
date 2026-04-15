@@ -91,3 +91,24 @@ $('.accordion-header').click(function(){
 });
 
 });
+//this code is for smooth scrolling to sections when clicking navbar links, but only if it's the same page (index.html) to avoid interfering with normal navigation to careers.html#section
+$(document).ready(function () {
+  $(".navbar a").on("click", function (e) {
+    const target = this.hash;
+    const currentPath = window.location.pathname;
+    const linkPath = this.pathname;
+
+    // Only prevent default if it's the SAME page
+    if (target && currentPath === linkPath) {
+      e.preventDefault();
+
+      $("html, body").animate(
+        {
+          scrollTop: $(target).offset().top - 70
+        },
+        800
+      );
+    }
+    // else → let it navigate normally (to index.html#section)
+  });
+});
