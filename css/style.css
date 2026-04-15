@@ -1365,7 +1365,7 @@ body{
             min-height: 60vh;
         }
     
-        .faq .row{ 
+        .faq .row{
             padding: 0 1.5rem;
             flex-flow: column;
         }
